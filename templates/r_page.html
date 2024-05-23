@@ -1,0 +1,304 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Accs History</title>-->
+
+<!--    {% include "head.html" %}-->
+<!--</head>-->
+<!--<body>-->
+
+<!--{% include "navbar.html" %}-->
+
+<!--<h1></h1>-->
+
+<!--<form action="/r_page" method="GET" class="form-inline justify-content-center my-2 my-lg-0">-->
+<!--    <label for="search" class="mr-2">Search:</label>-->
+<!--    <input type="text" id="search" name="search" class="form-control mr-sm-2" placeholder="Search by Student Name">-->
+
+<!--    <label for="start_date" class="mr-2">Start Date:</label>-->
+<!--    <input type="date" id="start_date" name="start_date" class="form-control mr-sm-2">-->
+
+<!--    <label for="end_date" class="mr-2">End Date:</label>-->
+<!--    <input type="date" id="end_date" name="end_date" class="form-control mr-sm-2">-->
+
+<!--<button type="submit" class="btn btn-primary my-2 my-sm-0">Search</button>-->
+<!--    {% if data.has_previous %}-->
+<!--        <a href="?page={{ data.previous_page_number }}">Previous</a>-->
+<!--    {% endif %}-->
+
+<!--    {% if data.has_next %}-->
+<!--        <a href="?page={{ data.next_page_number }}">Next</a>-->
+<!--    {% endif %}-->
+<!--</form>-->
+
+<!--<div class="text-center">-->
+<!--    <table class="table mt-4 mx-auto" id="dataTable">-->
+<!--        <thead class="thead-dark">-->
+<!--            <tr>-->
+<!--                <th>öğrenci id</th>-->
+<!--                <th>öğrenci adı</th>-->
+<!--                <th>ders adı</th>-->
+<!--                <th>katılma tarihi</th>-->
+<!--                <th>katılım sayısı</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            {% for row in data %}-->
+<!--                <tr>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                </tr>-->
+<!--            {% endfor %}-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    // Create an object to store the last detection time and access date for each person-->
+<!--    var personData = {};-->
+
+<!--    function searchTable() {-->
+<!--    var input, filter, table, tr, td, i, txtValue;-->
+<!--    var startDate, endDate;-->
+
+<!--    // Get input values-->
+<!--    input = document.getElementById("search");-->
+<!--    filter = input.value.toUpperCase();-->
+<!--    startDate = new Date(document.getElementById("start_date").value);-->
+<!--    endDate = new Date(document.getElementById("end_date").value);-->
+
+<!--    table = document.getElementById("dataTable");-->
+<!--    tr = table.getElementsByTagName("tr");-->
+
+<!--    for (i = 0; i < tr.length; i++) {-->
+<!--        var nameTd = tr[i].getElementsByTagName("td")[1];-->
+<!--        var dateTd = tr[i].getElementsByTagName("td")[3]; // Assuming date is in the fourth column-->
+
+<!--        if (nameTd && dateTd) {-->
+<!--            txtValue = nameTd.textContent || nameTd.innerText;-->
+<!--            var accsDate = new Date(dateTd.textContent || dateTd.innerText);-->
+
+<!--            // Check if the student name is already displayed and the date is within the range-->
+<!--            if (-->
+<!--                txtValue.toUpperCase().indexOf(filter) > -1 &&-->
+<!--                (!startDate || accsDate >= startDate) &&-->
+<!--                (!endDate || accsDate <= endDate)-->
+<!--            ) {-->
+<!--                tr[i].style.display = "";-->
+<!--            } else {-->
+<!--                tr[i].style.display = "none";-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--}-->
+<!--</script>-->
+
+
+
+<!--</body>-->
+<!--</html>-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Accs History</title>-->
+
+<!--    {% include "head.html" %}-->
+<!--</head>-->
+<!--<body>-->
+
+<!--{% include "navbar.html" %}-->
+
+<!--<h1></h1>-->
+
+<!--<form action="/r_page" method="GET" class="form-inline justify-content-center my-2 my-lg-0">-->
+<!--    <label for="search" class="mr-2">Search:</label>-->
+<!--    <input type="text" id="search" name="search" class="form-control mr-sm-2" placeholder="Search by Student Name">-->
+
+<!--    <label for="start_date" class="mr-2">Start Date:</label>-->
+<!--    <input type="date" id="start_date" name="start_date" class="form-control mr-sm-2">-->
+
+<!--    <label for="end_date" class="mr-2">End Date:</label>-->
+<!--    <input type="date" id="end_date" name="end_date" class="form-control mr-sm-2">-->
+
+<!--    <button type="submit" class="btn btn-primary my-2 my-sm-0">Search</button>-->
+<!--    {% if data.has_previous %}-->
+<!--        <a href="?page={{ data.previous_page_number }}">Previous</a>-->
+<!--    {% endif %}-->
+
+<!--    {% if data.has_next %}-->
+<!--        <a href="?page={{ data.next_page_number }}">Next</a>-->
+<!--    {% endif %}-->
+<!--</form>-->
+
+<!--<div class="text-center">-->
+<!--    <table class="table mt-4 mx-auto" id="dataTable">-->
+<!--        <thead class="thead-dark">-->
+<!--            <tr>-->
+<!--                <th>öğrenci id</th>-->
+<!--                <th>öğrenci adı</th>-->
+<!--                <th>ders adı</th>-->
+<!--                <th>katılma tarihi</th>-->
+<!--                <th>katılım sayısı</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--            {% for row in data %}-->
+<!--                <tr>-->
+<!--                    <td>{{ row[2] }}</td>-->
+<!--                    <td>{{ row[4] }}</td>-->
+<!--                    <td>{{ row[5] }}</td>-->
+<!--                    <td>{{ row[1] }}</td>-->
+<!--                    <td>{{ row[6] }}</td>-->
+<!--                </tr>-->
+<!--            {% endfor %}-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--    <button onclick="exportToCSV()" class="btn btn-success my-2">Export to CSV</button>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    function downloadCSV(csv, filename) {-->
+<!--        var csvFile = new Blob([csv], { type: "text/csv" });-->
+<!--        var downloadLink = document.createElement("a");-->
+
+<!--        downloadLink.download = filename;-->
+<!--        downloadLink.href = window.URL.createObjectURL(csvFile);-->
+<!--        downloadLink.style.display = "none";-->
+
+<!--        document.body.appendChild(downloadLink);-->
+<!--        downloadLink.click();-->
+<!--        document.body.removeChild(downloadLink);-->
+<!--    }-->
+
+<!--    function exportToCSV() {-->
+<!--        var csv = [];-->
+<!--        var rows = document.querySelectorAll("#dataTable tr");-->
+
+<!--        for (var i = 0; i < rows.length; i++) {-->
+<!--            var row = [];-->
+<!--            var cols = rows[i].querySelectorAll("td");-->
+
+<!--            for (var j = 0; j < cols.length; j++) {-->
+<!--                row.push(cols[j].innerText);-->
+<!--            }-->
+
+<!--            csv.push(row.join(","));-->
+<!--        }-->
+
+<!--        downloadCSV(csv.join("\n"), "table_data.csv");-->
+<!--    }-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<head>
+    {% include "head.html" %}
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<h1></h1>
+
+<form action="/r_page" method="GET" class="form-inline justify-content-center my-2 my-lg-0">
+    <label for="search" class="mr-2">Search:</label>
+    <input type="text" id="search" name="search" class="form-control mr-sm-2" placeholder="Search by Student Name">
+
+    <label for="start_date" class="mr-2">Start Date:</label>
+    <input type="date" id="start_date" name="start_date" class="form-control mr-sm-2">
+
+    <label for="end_date" class="mr-2">End Date:</label>
+    <input type="date" id="end_date" name="end_date" class="form-control mr-sm-2">
+
+    <button type="submit" class="btn btn-primary my-2 my-sm-0">Search</button>
+    {% if data.has_previous %}
+        <a href="?page={{ data.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {% if data.has_next %}
+        <a href="?page={{ data.next_page_number }}">Next</a>
+    {% endif %}
+</form>
+
+<div class="text-center">
+    <table class="table mt-4 mx-auto" id="dataTable">
+        <thead class="thead-dark">
+            <tr>
+                <th>öğrenci id</th>
+                <th>öğrenci adı</th>
+                <th>ders adı</th>
+                <th>katılma tarihi</th>
+                <th>katılım sayısı</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[6] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button onclick="exportToCSV()" class="btn btn-success my-2">Export to CSV</button>
+</div>
+
+<script>
+    function downloadCSV(csv, filename) {
+        var csvFile = new Blob([csv], { type: "text/csv" });
+        var downloadLink = document.createElement("a");
+
+        downloadLink.download = filename;
+        downloadLink.href = window.URL.createObjectURL(csvFile);
+        downloadLink.style.display = "none";
+
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
+
+    function exportToCSV() {
+        var csv = [];
+        var rows = document.querySelectorAll("#dataTable tr");
+
+        // Add titles row
+        var titlesRow = [];
+        var titles = document.querySelectorAll("#dataTable th");
+        for (var i = 0; i < titles.length; i++) {
+            titlesRow.push(titles[i].innerText);
+        }
+        csv.push(titlesRow.join(","));
+
+        // Add data rows
+        for (var i = 0; i < rows.length; i++) {
+            var row = [];
+            var cols = rows[i].querySelectorAll("td");
+
+            for (var j = 0; j < cols.length; j++) {
+                row.push(cols[j].innerText);
+            }
+
+            csv.push(row.join(","));
+        }
+
+        downloadCSV(csv.join("\n"), "table_data.csv");
+    }
+</script>
+
+</body>
+</html>

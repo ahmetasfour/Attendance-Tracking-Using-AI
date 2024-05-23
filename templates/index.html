@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.html" %}
+</head>
+<body>
+
+{% include "navbar.html" %}
+
+<section class="py-1">
+    <div class="row mt-5">
+        <div class="col-lg-8 offset-lg-2">
+            <h3>Dashbord</h3>
+            <hr>
+            <div class="row">
+                <div class="col-lg-4">
+                    <a href="/addprsn" type="button" class="btn btn-success btn-lg"><b>Öğrenci ekle</b></a>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="/r_page" type="button" class="btn btn-success btn-lg"><b>Öğrenci rapor</b></a>
+                </div>
+
+                <div class="col-lg-4">
+                    <a href="/fr_page" type="button" class="btn btn-info btn-lg"><b>Yoklama Al.</b></a>
+                </div>
+
+
+
+
+            </div>
+
+            <br>
+            <table class="table" style="width: 80%">
+                <thead>
+                    <tr>
+                        <th>öğrenci Id</th>
+                        <th>adı</th>
+                        <th>ders</th>
+                        <th>aktiv</th>
+                        <th>eklendiği tarih</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data %}
+                        <tr>
+                            <td>{{item[0]}}</td>
+                            <td>{{item[1]}}</td>
+                            <td>{{item[2]}}</td>
+                            <td>{{item[3]}}</td>
+                            <td>{{item[4]}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
